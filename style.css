@@ -188,9 +188,14 @@ body {
 }
 
 /* ---------------------------- my own css --------------- */
+/* Tesed for:
+- mobile device Samsung Galaxy S8+ (360 x 740) 
+- tablet iPad Mini (768 x 1024)
+- desktop
+*/
 .content-wrapper {
   background-color: white;
-  display: flex;
+  display: inline-flex;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -202,7 +207,7 @@ body {
 .navbar {
   width: 100%;
   background-color: white;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 /* Navbar links */
@@ -227,6 +232,8 @@ body {
 
 .logo img {
   margin-left: 1vw;
+  width: 6vw;
+
 }
 
 header {
@@ -380,26 +387,69 @@ form>button {
   flex-direction: row-reverse;
   width: 100%;
 }
-footer{
-  color: white;
-  padding-left: 1vw;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--clr-green-400);
-  margin: 1vw;
+
+footer {
   width: 100vw;
+  background-color: var(--clr-green-400);
+  display: flex;
+  height: auto;
+  padding-top: 3.5vw;
+  padding-left: 20vw;
+  padding-right: 10vw;
+}
+
+.left-side {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 1vw;
+  padding-right: 10vw;
+  width: 80%;
   height: auto;
 }
-.logo-wrapper{
+.logo-text{
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact>p {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+}
+
+.right-side {
+  z-index: 50;
+  width: 20%;
+}
+
+.logo-wrapper {
   display: flex;
   gap: 2vw;
 }
 
-footer
-.foot-logo>img{
-  width: 6vw;
+footer .foot-logo>img {
+  width: 4vw;
 }
 
+.contact a:link {
+  color: white;
+}
+
+.contact>p {
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+}
+
+.right-side a {
+  color: white;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+}
+
+.right-side>ul {
+  list-style: none;
+}
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
