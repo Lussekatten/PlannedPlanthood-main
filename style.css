@@ -52,7 +52,7 @@ figcaption {
 }
 
 /* for container queries, landmarks as containers */
-body > :is(header, footer),
+body> :is(header, footer),
 main {
   container-type: inline-size;
 }
@@ -141,15 +141,24 @@ main {
 }
 
 /* Composition */
-.flow > * + * {
+.flow>*+* {
   margin-block-start: var(--flow-space, 1em);
 }
 
 /* Global/base */
+h1 {
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+}
+
 h2,
 h3 {
   font-weight: var(--fw-bold);
   line-height: 1;
+}
+
+h1 {
+  font-size: var(--fs-800);
 }
 
 h2 {
@@ -178,7 +187,224 @@ body {
   color: var(--clr-primary-dark);
 }
 
-/* --- my own css --- */
-.content-wrapper{
-  
+/* ---------------------------- my own css --------------- */
+.content-wrapper {
+  background-color: white;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  flex-direction: column;
+}
+
+/*  */
+.navbar {
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: var(--clr-green-400);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* The currently active menu choice gets this color */
+.active {
+  background-color: var(--clr-primary-light-2);
+}
+
+.logo img {
+  margin-left: 1vw;
+}
+
+header {
+  width: 80vw;
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: white;
+}
+
+.logotext>p {
+  color: var(--clr-green-400);
+}
+
+.hero-top {
+  margin-top: 4vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: var(--clr-primary-light-2);
+}
+
+.gallery {
+  margin: 1vw;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 2px 2px rgb(180, 179, 179);
+  background-color: white;
+  display: flex;
+  width: 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.gallery>img {
+  width: 38vw;
+}
+
+.newsletter,
+.remember {
+  margin: 1vw;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.circle {
+  display: flex;
+  width: 24vw;
+  height: 24vw;
+  border-radius: 12vw;
+  background-color: var(--clr-green-400);
+  margin-top: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle>img {
+  width: 60%;
+}
+
+.the-form {
+  /* border: 2px, solid #000; */
+  text-align: center;
+  display: flex;
+  margin-top: 2vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+form>button {
+  padding: 6px 8px;
+  font-size: 0.6em;
+  border-radius: 4px;
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  background-color: var(--clr-primary-light-2);
+}
+
+.card {
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 1vw;
+  width: 25vw;
+  height: auto;
+}
+
+.card img {
+  margin-top: 1vw;
+  width: 23vw;
+}
+
+.card>h3 {
+  line-height: 2.2rem;
+  font-size: var(--fs-500);
+  font-weight: var(--fw-bold);
+}
+
+.card>p {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+}
+
+.vertigo {
+  /* border: 2px, solid #000; */
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  margin-top: 2vw;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.remember button {
+  color: white;
+  background-color: var(--clr-green-400);
+  padding: 6px 8px;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  border-radius: 16px;
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+}
+
+.all-the-space {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+footer{
+  color: white;
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-green-400);
+  margin: 1vw;
+  width: 100vw;
+  height: auto;
+}
+.logo-wrapper{
+  display: flex;
+  gap: 2vw;
+}
+
+footer
+.foot-logo>img{
+  width: 6vw;
+}
+
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }
