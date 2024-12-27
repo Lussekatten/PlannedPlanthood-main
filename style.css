@@ -188,7 +188,7 @@ body {
 }
 
 /* ---------------------------- my own css --------------- */
-/* Tesed for:
+/* Tested for:
 - mobile device Samsung Galaxy S8+ (360 x 740) 
 - tablet iPad Mini (768 x 1024)
 - desktop
@@ -222,7 +222,8 @@ body {
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #000;
+  background-color: var(--clr-green-400);
+  color: white;
 }
 
 /* The currently active menu choice gets this color */
@@ -232,8 +233,6 @@ body {
 
 .logo img {
   margin-left: 1vw;
-  width: 6vw;
-
 }
 
 header {
@@ -279,6 +278,34 @@ header {
   width: 38vw;
 }
 
+.avatar-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1vw;
+  background-color: white;
+  margin: 1vw;
+  justify-content: left;
+  align-items: center;
+  height: auto;
+}
+
+.avatar-wrapper>div>img {
+  width: 6vw;
+  height: auto;
+}
+
+.signature {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+  display: flex;
+  flex-direction: column;
+}
+
+.signature p {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+}
+
 .newsletter,
 .remember {
   margin: 1vw;
@@ -317,14 +344,6 @@ header {
   height: auto;
 }
 
-form>button {
-  padding: 6px 8px;
-  font-size: 0.6em;
-  border-radius: 4px;
-  margin-bottom: 1vw;
-  margin-top: 1vw;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -356,7 +375,7 @@ form>button {
 }
 
 .card>p {
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   font-weight: var(--fw-regular);
 }
 
@@ -371,7 +390,7 @@ form>button {
   height: auto;
 }
 
-.remember button {
+button {
   color: white;
   background-color: var(--clr-green-400);
   padding: 6px 8px;
@@ -408,28 +427,36 @@ footer {
   width: 80%;
   height: auto;
 }
-.logo-text{
+
+.logo-text {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semi-bold);
+  line-height: 0.8rem;
+  margin-right: 250px;
   width: 80px;
   display: flex;
   flex-wrap: wrap;
+  /* align-self: ???; */
 }
+
 .contact>p {
   font-size: var(--fs-200);
   font-weight: var(--fw-regular);
 }
 
 .right-side {
-  z-index: 50;
   width: 20%;
 }
 
 .logo-wrapper {
+  /* border: #000 2px solid; */
+  margin-bottom: 15px;
   display: flex;
-  gap: 2vw;
 }
 
-footer .foot-logo>img {
-  width: 4vw;
+.foot-logo>img {
+  margin-right: 15px;
+  width: 30px;
 }
 
 .contact a:link {
@@ -452,7 +479,7 @@ footer .foot-logo>img {
 }
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 360px) {
   .navbar a {
     float: none;
     display: block;
