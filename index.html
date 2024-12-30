@@ -11,21 +11,25 @@
 
 <body>
   <div class="content-wrapper">
-    <header>
+    <section class="top-nav">
       <div class="logo">
         <img src="Assets/images/new-logo.PNG" alt="logo image">
       </div>
-      <div class="logotext">
+      <div class="toplogo-text">
         <p>PLANNED PLANTHOOD</p>
       </div>
-      <div class="navbar">
-        <a class="active" href="#"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home</a>
-        <a href="#"><i class="fa fa-history" aria-hidden="true"></i> History</a>
-        <a href="#"><i class="fa fa-fw fa-user" aria-hidden="true"></i> Tips</a>
-        <a href="#"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i> Contact</a>
-      </div>
-    </header>
-    <section class="hero-top">
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <ul class="menu">
+        <li><a class="active" href="#"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-history" aria-hidden="true"></i> History</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-user" aria-hidden="true"></i> Tips</a></li>
+        <li><a href="#"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i> Contact</a></li>
+      </ul>
+    </section>
+    <section class="gallery-wrapper">
       <h1>Our magnificent planet</h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam amet odit consequuntur quis. Obcaecati minima
         mollitia sed tempora ad laboriosam totam sapiente cumque, asperiores dolore vel, debitis eum alias a?</p>
@@ -38,7 +42,7 @@
         <img src="Assets/images/gal-05.jpg" alt="some image of nature">
       </div>
     </section>
-    <section class="newsletter">
+    <section class="hero-01">
       <div class="circle">
         <img src="Assets/images/icon-planting.svg" alt="watering image">
       </div>
@@ -46,8 +50,11 @@
         <h2>Subscribe to our newsletter so you won't miss a thing!</h2>
       </div>
       <form action="">
-        <input type="email" required placeholder="email@domain.com">
-        <button type="submit">Send</button>
+        <fieldset>
+          <input type="email" id="email" name="email" required placeholder="email@domain.com" autocomplete="email"
+            title="Please enter your e-mail" autofocus>
+          <button type="submit">Send</button>
+        </fieldset>
       </form>
     </section>
     <section class="card-container">
@@ -71,78 +78,78 @@
         <h3>Water drops</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias vel ducimus ex recusandae quae assumenda
           similique </p>
-          <div class="avatar-wrapper">
-            <div>
-              <img src="Assets/images/avatar-02.png" alt="avatar">
-            </div>
-            <div class="signature">
-              <h4>Monique</h4>
-              <p>2024-12-10</p>
-            </div>
+        <div class="avatar-wrapper">
+          <div>
+            <img src="Assets/images/avatar-02.png" alt="avatar">
           </div>
+          <div class="signature">
+            <h4>Monique</h4>
+            <p>2024-12-10</p>
+          </div>
+        </div>
       </div>
       <div class="card">
         <img src="Assets/images/nature-03.jpg" alt="barren hills">
         <h3>Barren hills</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias vel ducimus ex recusandae quae assumenda
           similique </p>
-          <div class="avatar-wrapper">
-            <div>
-              <img src="Assets/images/avatar-03.png" alt="avatar">
-            </div>
-            <div class="signature">
-              <h4>Skywalker</h4>
-              <p>2024-12-10</p>
-            </div>
+        <div class="avatar-wrapper">
+          <div>
+            <img src="Assets/images/avatar-03.png" alt="avatar">
           </div>
+          <div class="signature">
+            <h4>Skywalker</h4>
+            <p>2024-12-10</p>
+          </div>
+        </div>
       </div>
       <div class="card">
         <img src="Assets/images/nature-04.jpg" alt="barren hills">
         <h3>Barren hills</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias vel ducimus ex recusandae quae assumenda
           similique </p>
-          <div class="avatar-wrapper">
-            <div>
-              <img src="Assets/images/avatar-04.png" alt="avatar">
-            </div>
-            <div class="signature">
-              <h4>Sexypants</h4>
-              <p>2024-12-10</p>
-            </div>
+        <div class="avatar-wrapper">
+          <div>
+            <img src="Assets/images/avatar-04.png" alt="avatar">
           </div>
+          <div class="signature">
+            <h4>Sexypants</h4>
+            <p>2024-12-10</p>
+          </div>
+        </div>
       </div>
       <div class="card">
         <img src="Assets/images/nature-05.jpg" alt="stormy weather">
         <h3>Stormy weather</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias vel ducimus ex recusandae quae assumenda
           similique </p>
-          <div class="avatar-wrapper">
-            <div>
-              <img src="Assets/images/avatar-05.png" alt="avatar">
-            </div>
-            <div class="signature">
-              <h4>EyesWideShut</h4>
-              <p>2024-12-10</p>
-            </div>
+        <div class="avatar-wrapper">
+          <div>
+            <img src="Assets/images/avatar-05.png" alt="avatar">
           </div>
+          <div class="signature">
+            <h4>EyesWideShut</h4>
+            <p>2024-12-10</p>
+          </div>
+        </div>
       </div>
       <div class="card">
         <img src="Assets/images/nature-06.jpg" alt="country road">
         <h3>Country road</h3>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias vel ducimus ex recusandae quae assumenda
           similique </p>
-          <div class="avatar-wrapper">
-            <div>
-              <img src="Assets/images/avatar-06.png" alt="avatar">
-            </div>
-            <div class="signature">
-              <h4>MrFreud</h4>
-              <p>2024-12-10</p>
-            </div>
+        <div class="avatar-wrapper">
+          <div>
+            <img src="Assets/images/avatar-06.png" alt="avatar">
           </div>
+          <div class="signature">
+            <h4>MrFreud</h4>
+            <p>2024-12-10</p>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="remember">
+    <section class="hero-02">
       <div class="circle">
         <img src="Assets/images/icon-seedling-2.svg" alt="watering image">
       </div>
@@ -162,7 +169,7 @@
           <div class="foot-logo">
             <img src="Assets/images/logo.svg" alt="logo image">
           </div>
-          <div class="logo-text">
+          <div class="bottomlogo-text">
             <p>PLANNED PLANTHOOD</p>
           </div>
         </div>

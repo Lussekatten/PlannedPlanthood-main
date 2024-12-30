@@ -203,14 +203,141 @@ body {
   flex-direction: column;
 }
 
-/*  */
-.navbar {
-  width: 100%;
+/* -------------  Start hamburger menu css */
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: white;
-  /* overflow: auto; */
+  /* background: linear-gradient(to left, #f46b45, #eea849); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
 }
 
-/* Navbar links */
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu>li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: var(--clr-green-400);
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle~.menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu>li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+
+  .menu>li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+.menu>li>a:hover {
+  color: white;
+  background-color: var(--clr-green-800);
+}
+
+/* -------------------- End hamburger menu css ----------------------*/
+/* .navbar {
+  width: 100%;
+  background-color: white;
+  /* overflow: auto;
+
+/* Navbar links 
 .navbar a {
   float: left;
   text-align: center;
@@ -220,11 +347,11 @@ body {
   font-size: 17px;
 }
 
-/* Navbar links on mouse-over */
+/* Navbar links on mouse-over
 .navbar a:hover {
   background-color: var(--clr-green-400);
   color: white;
-}
+} */
 
 /* The currently active menu choice gets this color */
 .active {
@@ -245,11 +372,19 @@ header {
   background-color: white;
 }
 
-.logotext>p {
+.toplogo-text>p {
   color: var(--clr-green-400);
+  margin-left: 10px;
+  margin-right: 25px;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semi-bold);
+  line-height: 0.8rem;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.hero-top {
+.gallery-wrapper {
   margin-top: 4vw;
   width: 100vw;
   display: flex;
@@ -306,8 +441,8 @@ header {
   font-weight: var(--fw-regular);
 }
 
-.newsletter,
-.remember {
+.hero-01,
+.hero-02 {
   margin: 1vw;
   padding: 10px 10px 10px 10px;
   background-color: white;
@@ -317,6 +452,18 @@ header {
   justify-content: center;
   align-items: center;
   height: auto;
+}
+
+fieldset {
+  border: 1px solid black;
+  /* margin: 0px;
+  padding: 0px; */
+  border-radius: 6vw;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 6vw;
 }
 
 .circle {
@@ -344,7 +491,12 @@ header {
   height: auto;
 }
 
+.the-form>h2 {
+  margin-bottom: 2vw;
+}
+
 .card-container {
+  padding-top: 3vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -391,14 +543,19 @@ header {
 }
 
 button {
+  border: 1px solid rgb(61, 59, 59);
   color: white;
   background-color: var(--clr-green-400);
-  padding: 6px 8px;
+  padding: 4px 4px;
   font-size: var(--fs-400);
   font-weight: var(--fw-regular);
   border-radius: 16px;
   margin-bottom: 1vw;
   margin-top: 1vw;
+}
+
+button:hover {
+  background-color: var(--clr-green-800);
 }
 
 .all-the-space {
@@ -428,7 +585,7 @@ footer {
   height: auto;
 }
 
-.logo-text {
+.bottomlogo-text {
   font-size: var(--fs-300);
   font-weight: var(--fw-semi-bold);
   line-height: 0.8rem;
