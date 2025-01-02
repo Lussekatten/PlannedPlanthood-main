@@ -341,26 +341,6 @@ h1 {
 }
 
 /* -------------------- End hamburger menu css ----------------------*/
-/* .navbar {
-  width: 100%;
-  background-color: white;
-  /* overflow: auto;
-
-/* Navbar links 
-.navbar a {
-  float: left;
-  text-align: center;
-  padding: 12px;
-  color: var(--clr-green-400);
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Navbar links on mouse-over
-.navbar a:hover {
-  background-color: var(--clr-green-400);
-  color: white;
-} */
 
 /* The currently active menu choice gets this color */
 .active {
@@ -539,7 +519,38 @@ input {
   height: auto;
 }
 
-.card img {
+/* ----------------- Start overlay effect --------------- */
+.overlay-container {
+  position: relative;
+  width: 100%;
+  max-width: 23vw;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.icon {
+  color: white;
+  /* Changing the font size should make the overlay image bigger, but it does not work
+  See the file overlay-test.html  
+  I only used the overlay effect on the first three cards */
+  font-size: 20px;
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  text-align: center;
+}
+
+/* ----------------- End overlay effect --------------- */
+.card>div>img {
   margin-top: 1vw;
   width: 23vw;
 }
@@ -622,6 +633,10 @@ button:hover {
   background-color: var(--clr-green-400);
 }
 
+.tag-other {
+  background-color: var(--clr-neutral-400);
+}
+
 /* --------- end tag definitions ------------- */
 .all-the-space {
   display: inline-flex;
@@ -632,7 +647,7 @@ button:hover {
 
 .separator-grey {
   width: 100vw;
-  height: 25px;
+  height: 10px;
   background-color: var(--clr-primary-light-2);
 }
 
@@ -686,8 +701,10 @@ footer {
 }
 
 .foot-logo>img {
+  min-width: 30px;
   margin-right: 15px;
-  width: 30px;
+  width: 32px;
+  height: auto;
 }
 
 .contact a:link {
